@@ -42,10 +42,10 @@ def on_press(key):
         # Check if the key has a 'char' attribute (to filter out special keys)
         if hasattr(key, 'char'):
             if key.char == 'q':
-                current_speed += 0.1
+                current_speed += 0.25
                 rospy.loginfo("Increasing speed to: %.2f", current_speed)
             elif key.char == 'w':
-                current_speed -= 0.1
+                current_speed -= 0.25
                 rospy.loginfo("Decreasing speed to: %.2f", current_speed)
     except Exception as e:
         rospy.logerr("Error in on_press: %s", str(e))
