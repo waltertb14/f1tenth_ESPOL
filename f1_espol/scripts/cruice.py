@@ -70,7 +70,7 @@ def main():
     
     # Set a publishing rate (e.g., 10 Hz)
     rate = rospy.Rate(10)
-
+    
     # Start the keyboard listener in a separate thread
     listener = Listener(on_press=on_press, on_release=on_release)
     listener.start()
