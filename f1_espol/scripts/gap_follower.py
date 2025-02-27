@@ -22,7 +22,7 @@ class GapFollower:
         
         self.scan_topic = rospy.get_param('~scan_topic', '/scan')
         #self.drive_topic = rospy.get_param('~gap_drive_topic', '/drive')
-        self.drive_topic = "low_level/ackermann_cmd_mux/input/teleop"
+        self.drive_topic = "vesc/low_level/ackermann_cmd_mux/input/teleop"
 
         self.scan_sub = rospy.Subscriber(self.scan_topic, LaserScan, self.scan_callback)
         self.drive_pub = rospy.Publisher(self.drive_topic, AckermannDriveStamped, queue_size=10)
