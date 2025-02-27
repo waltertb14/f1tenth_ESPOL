@@ -13,7 +13,7 @@ class GapFollower:
     MAX_LIDAR_DIST = 10
     STRAIGHTS_SPEED = 0.5
     CORNERS_SPEED = 0.5
-    STRAIGHTS_STEERING_ANGLE = 0.0
+    STRAIGHTS_STEERING_ANGLE = np.pi/18
     CORNER_THRESHOLD = np.pi / 12  # 코너를 감지하기 위한 임계값
     TURN_ANGLE_MULTIPLIER = 1.5
 
