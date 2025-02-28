@@ -13,7 +13,7 @@ class GapFollower:
     MAX_LIDAR_DIST = 10
     STRAIGHTS_SPEED = 0.5
     CORNERS_SPEED = 0.5
-    STRAIGHTS_STEERING_ANGLE = 0.01
+    STRAIGHTS_STEERING_ANGLE = 0.00
     CORNER_THRESHOLD = np.pi / 12  # 코너를 감지하기 위한 임계값
     TURN_ANGLE_MULTIPLIER = 1.5
 
@@ -77,6 +77,7 @@ class GapFollower:
 
         gap_start, gap_end = self.find_max_gap(proc_ranges)
         best = self.find_best_point(gap_start, gap_end, proc_ranges)
+        rospy.loginfo(best)
 
         steering_angle = self.get_angle(best, len(proc_ranges))
         speed = self.CORNERS_SPEED if abs(steering_angle) > self.STRAIGHTS_STEERING_ANGLE else self.STRAIGHTS_SPEED
