@@ -32,7 +32,7 @@ class GapFollower:
 
     def preprocess_lidar(self, ranges):
         self.radians_per_elem = (2 * np.pi) / len(ranges)
-        proc_ranges = np.array(ranges[135:-135])
+        proc_ranges = np.array(ranges[90:-90])
         proc_ranges = np.convolve(proc_ranges, np.ones(self.PREPROCESS_CONV_SIZE), 'same') / self.PREPROCESS_CONV_SIZE
         proc_ranges = np.clip(proc_ranges, 0, self.MAX_LIDAR_DIST)
         return proc_ranges
