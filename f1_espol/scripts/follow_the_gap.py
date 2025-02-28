@@ -19,7 +19,7 @@ class FollowTheGap:
         # Parameters (can be set via rosparam)
         self.speed = rospy.get_param("~speed", 0.5)           # Constant speed command
         self.max_steer = rospy.get_param("~max_steer", 0.2)     # Maximum steering angle (radians)
-        self.gap_threshold = rospy.get_param("~gap_threshold", 0.5)  # Distance threshold (meters) to consider "free"
+        self.gap_threshold = rospy.get_param("~gap_threshold", 1.0)  # Distance threshold (meters) to consider "free"
         
         rospy.loginfo("FollowTheGap node initialized.")
 
