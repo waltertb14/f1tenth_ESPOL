@@ -11,11 +11,11 @@ class GapFollower:
     PREPROCESS_CONV_SIZE = 3
     BEST_POINT_CONV_SIZE = 80
     MAX_LIDAR_DIST = 10
-    STRAIGHTS_SPEED = 0.5
-    CORNERS_SPEED = 0.5
+    STRAIGHTS_SPEED = 0.8
+    CORNERS_SPEED = 0.8
     STRAIGHTS_STEERING_ANGLE = np.pi/18
     CORNER_THRESHOLD = np.pi / 12  # 코너를 감지하기 위한 임계값
-    TURN_ANGLE_MULTIPLIER = 1.5
+    TURN_ANGLE_MULTIPLIER = 0.5
 
     def __init__(self):
         rospy.init_node('gap_follower', anonymous=True)
